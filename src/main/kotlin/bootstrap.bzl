@@ -34,6 +34,9 @@ def kt_bootstrap_library(name, deps = [], neverlink_deps = [], srcs = [], visibi
         srcs = srcs,
         visibility = visibility,
         deps = deps + ["%s_neverlink" % name],
+        kotlinc_opts = {
+            "-Xcontext-parameters": "-Xcontext-parameters",
+        },
         **kwargs
     )
 
